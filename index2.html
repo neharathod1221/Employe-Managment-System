@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Management System</h2>
+        <form id="userForm" onsubmit="event.preventDefault(); onFormSubmit();">
+            <input type="hidden" id="editIndex" value="-1">
+            
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter Name">
+            
+            <label>Email:</label>
+            <input type="text" id="email" placeholder="Enter Email">
+            
+            <label>Address:</label>
+            <textarea id="address" placeholder="Enter Address"></textarea>
+            
+            <label>Phone Number:</label>
+            <input type="text" id="phone" placeholder="10-digit number">
+            
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+            </div>
+
+            <label>Hobbies:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="hobby" value="Reading"> Reading
+                <input type="checkbox" name="hobby" value="Sports"> Sports
+                <input type="checkbox" name="hobby" value="Crafting">Crafting
+                <input type="checkbox" name="hobby" value="Photography"> Photography
+                <input type="checkbox" name="hobby" value="Gardening"> Gardening
+            </div>
+
+            <label>Designation:</label>
+            <select id="designation">
+                <option value="">--Select--</option>
+                <option value="Developer">Developer</option>
+                <option value="Manager">Manager</option>
+                <option value="Intern / Trainee">Intern / Trainee</option>
+                <option value="Junior Developer">Junior Developer</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Frontend Developer ">Frontend Developer </option>
+                <option value="Backend Developer ">Backend Developer</option>
+            </select>
+
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="reset" onclick="resetForm()">Reset</button>
+        </form>
+ </div>
+        
+    <div>
+        <hr>
+        <table id="userList">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Hobbies</th>
+                    <th>Designation</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>
