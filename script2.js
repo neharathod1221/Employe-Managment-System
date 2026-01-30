@@ -1,4 +1,8 @@
-let users = [];
+let users =  JSON.parse(sessionStorage.getItem("employees")) ||[];
+//
+document.addEventListener("DOMContentLoaded", function() {
+    renderTable();
+});
 
 function onFormSubmit() {
     if (validate()) {
@@ -10,9 +14,14 @@ function onFormSubmit() {
         } else {
             users[editIndex] = formData; 
         }
+
+        saveToSession();
         resetForm();
         renderTable();
     }
+}
+function saveToSession() {
+    sessionStorage.setItem("employees", JSON.stringify(users));
 }
 
 function readFormData() {
@@ -90,3 +99,5 @@ function resetForm() {
     document.getElementById("editIndex").value = -1;
     document.getElementById("submitBtn").innerText = "Submit";
 }
+
+
